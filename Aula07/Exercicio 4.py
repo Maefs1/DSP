@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-
-@author: Jonath
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy import pi, log10, exp
