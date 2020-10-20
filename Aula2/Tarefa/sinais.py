@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 def step(t):
     z = []
     for x in t:
-        if x > 0.0:
+        if x >= 0.0:
             z.append(1)
         else:
             z.append(0)
@@ -62,7 +62,7 @@ plt.yticks(np.arange(0, 1.1, 1))
 
 # Seno
 x2 = np.linspace(-1, 30, 32)
-fo = 100
+fo = 1000
 Fs = 8000
 seno = np.sin(2*np.pi*x2*fo/Fs)
 

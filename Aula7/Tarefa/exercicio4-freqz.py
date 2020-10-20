@@ -13,12 +13,12 @@ plt.figure("Figura 1",figsize=(15,8))
 
 #Questão A
 """
-                -1,2
+                z - 1,2
 H(z) =  3 ----------------
            (z-0,5)(z-0,9)
 
 """
-num_m =  [3,-3.6]
+num_m =   [3,-3.6]
 den_m = [1, -1.4, 0.45]
 w, h = freqz(num_m, den_m)
 plt.subplot(3, 1, 1)

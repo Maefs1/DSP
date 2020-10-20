@@ -12,6 +12,9 @@ import matplotlib.pyplot as plt
  X(e^jw) =     ------------
                 1 - ae^-jw
 """
+#modulo = variacao do w
+#
+
 #Definindo o valor de a
 a = 0.5
 
@@ -32,12 +35,12 @@ plt.figure("TFD", figsize=(15,8))
 plt.subplot(211)
 plt.title("Módulo", color='green')
 plt.grid(1)
-plt.plot(Modulo_X, color='green')
+plt.plot(w, Modulo_X, color='green')
     
 plt.subplot(212)
 plt.title("Fase", color='red')
 plt.grid(1)
-plt.plot(Fase_X, color='red')
+plt.plot(w, Fase_X, color='red')
     
 plt.tight_layout()
 

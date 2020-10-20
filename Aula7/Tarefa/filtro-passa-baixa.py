@@ -8,7 +8,7 @@ Created on Sat Oct 17 08:22:37 2020
 import numpy as np
 import matplotlib.pyplot as plt
 
-#conta de teste 20*log10(16384/11300)
+#conta de teste 20*log10(11000/16384)
 
 #Criando variáveis
 media_buf = np.zeros(2)
@@ -28,7 +28,7 @@ F1 = 2 * Fs     #16000
 a = wc/(F1+wc)
 b = (wc-F1)/(F1+wc)
 
-read_path = "Sweep10_3600.pcm"
+read_path = "sen_1k.pcm"
 with open(read_path, 'rb') as f:
     buf = f.read()
     data_i = np.frombuffer(buf, dtype='int16')

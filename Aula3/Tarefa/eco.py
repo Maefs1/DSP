@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 # Lendo arquivo como binario
 try:
-    with open ("alo.pcm", "rb") as file:
+    with open ("impulsoUnitario.pcm", "rb") as file:
         fid = file.read()
         file.close()
 except:
@@ -22,7 +22,7 @@ tama_loop = len(entrada)
 
 Fs = 8000
 t1 = 1*10**(-3)
-t2 = 1.5*10**(-3)
+t2 = 2*10**(-3)
 
 n = [int(t1*Fs), int(t2*Fs), 0]
 
@@ -42,7 +42,7 @@ for i in range(quantidade_ganho):
     for j in range(tama_loop):
         vetor_delay[j] = a[i]*entrada[j]
         
-        np.concatenate([vet_saida, np.zeros(n[i], dtype = "int16")])
+             np.concatenate([vet_saida, np.zeros(n[i], dtype = "int16")])
     vet_saida = np.concatenate((vet_saida, vetor_delay))
 
 
@@ -55,16 +55,16 @@ plt.title("Sinal de entrada")
 plt.xlabel("Número de amostras")
 plt.ylabel("Amplitude")
 plt.grid(1)
-plt.plot(entrada)
-#plt.stem(entrada, use_line_collection= True)
+#plt.plot(entrada)
+plt.stem(entrada, use_line_collection= True)
 
 plt.subplot(212)
 plt.title("Sinal de saída")
 plt.xlabel("Número de amostras")
 plt.ylabel("Amplitude")
 plt.grid(1)
-plt.plot(vet_saida,color='red')
-#plt.stem(vet_saida, use_line_collection= True)
+#plt.plot(vet_saida,color='red')
+plt.stem(vet_saida, use_line_collection= True)
 
 plt.tight_layout()
 

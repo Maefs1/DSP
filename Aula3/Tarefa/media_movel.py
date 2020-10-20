@@ -10,14 +10,14 @@ import matplotlib.pyplot as plt
 
 #Definindo parâmetros
 sample_rate = 8000
-media_len = 8
+media_len = 16
 media_buf = np.zeros(media_len)
 
 read_path = "../Sweep10_3600.pcm"
 with open(read_path, 'rb') as file:
     buf = file.read()
     data_i = np.frombuffer(buf, dtype='int16')
-    #data_i = [8,6,4,2]
+    #data_i = [8,4,2,0,2,4,8]
     data_len = len(data_i)
 
     #Salvando o valor da entrada em outra variável

@@ -17,6 +17,8 @@ t = np.arange(-5*10**-3, 5*10**-3, Dt)
 f = 400
 xa = np.sin(2*np.pi*f*t)
 
+plt.figure("amostragem", figsize=(15,8))
+
 plt.subplot(2,1,1)
 plt.title("Sinal")
 plt.plot(t*1000, xa)
