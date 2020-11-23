@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1606173129 source:c:\users\mathe\dsp\aula11\tarefa\filtros\main.c
+	<stdio.h>
+	<fcntl.h>
+	<io.h>
+	"coeficientesPA.dat"
+
+1605585016 c:\users\mathe\dsp\aula11\tarefa\filtros\coeficientespa.dat
+
