@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1606494462 source:c:\users\mathe\dsp\aula11\tarefa\cancelamentoeco\main.c
+	<stdio.h>
+	<fcntl.h>
+	<io.h>
+

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1606174413 source:c:\users\mathe\dsp\aula11\tarefa\filtroequalizador\main.c
+1606501769 source:c:\users\mathe\dsp\aula11\tarefa\filtroequalizador\main.c
 	<stdio.h>
 	<fcntl.h>
 	<io.h>
@@ -7,9 +7,9 @@
 	"coeficientesPA.dat"
 	"coeficientesPF.dat"
 
-1605585032 c:\users\mathe\dsp\aula11\tarefa\filtroequalizador\coeficientespb.dat
+1606356635 c:\users\mathe\dsp\aula11\tarefa\filtroequalizador\coeficientespb.dat
 
-1605585016 c:\users\mathe\dsp\aula11\tarefa\filtroequalizador\coeficientespa.dat
+1606421702 c:\users\mathe\dsp\aula11\tarefa\filtroequalizador\coeficientespa.dat
 
-1605585034 c:\users\mathe\dsp\aula11\tarefa\filtroequalizador\coeficientespf.dat
+1606501807 c:\users\mathe\dsp\aula11\tarefa\filtroequalizador\coeficientespf.dat
 

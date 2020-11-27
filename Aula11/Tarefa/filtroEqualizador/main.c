@@ -2,14 +2,14 @@
 #include <fcntl.h>
 #include <io.h>
 
-#define NSAMPLES 160
+#define QTSAMPLES 160
 
 int main() {
   FILE * in_file, * out_file;
   int i, n, n_amost;
 
   short entrada, saida;
-  short sample[NSAMPLES] = {
+  short sample[QTSAMPLES] = {
     0x0
   };
 
@@ -23,15 +23,15 @@ int main() {
   float g_pa = 0.3;
 
 
-  float coef_pb[NSAMPLES] = {
+  float coef_pb[QTSAMPLES] = {
     #include "coeficientesPB.dat"
   };
 
-  float coef_pa[NSAMPLES] = {
+  float coef_pa[QTSAMPLES] = {
     #include "coeficientesPA.dat"
   };
 
-  float coef_pf[NSAMPLES] = {
+  float coef_pf[QTSAMPLES] = {
     #include "coeficientesPF.dat"
   };
 
@@ -46,7 +46,7 @@ int main() {
   }
 
   // zera vetor de amostras
-  for (i = 0; i < NSAMPLES; i++) {
+  for (i = 0; i < QTSAMPLES; i++) {
     sample[i] = 0;
   }
 
@@ -64,21 +64,21 @@ int main() {
     sample[0] = entrada;
 
     //Convolução e acumulação
-    for (n = 0; n < NSAMPLES; n++) {
+    for (n = 0; n < QTSAMPLES; n++) {
       y_pb += coef_pb[n] * sample[n];
     }
 
-    for (n = 0; n < NSAMPLES; n++) {
+    for (n = 0; n < QTSAMPLES; n++) {
       y_pa += coef_pa[n] * sample[n];
     }
 
-    for (n = 0; n < NSAMPLES; n++) {
+    for (n = 0; n < QTSAMPLES; n++) {
       y_pf += coef_pf[n] * sample[n];
     }
 
 
     //desloca amostra
-    for (n = NSAMPLES - 1; n > 0; n--) {
+    for (n = QTSAMPLES - 1; n > 0; n--) {
       sample[n] = sample[n - 1];
     }
 

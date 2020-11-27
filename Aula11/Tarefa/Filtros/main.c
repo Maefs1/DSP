@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include <io.h>
 
-#define NSAMPLES 160
+#define QTSAMPLES 160
 
 
 
@@ -11,17 +11,15 @@ int main() {
   int i, n, n_amost;
 
   short entrada, saida;
-  short sample[NSAMPLES] = {
+  short sample[QTSAMPLES] = {
     0x0
   };
 
   float y = 0;
 
-  //Carregando os coeficientes do filtro média móvel
-  float coef[NSAMPLES] = {
+  //Carregando os coeficientes do filtro
+  float coef[QTSAMPLES] = {
         #include "coeficientesPA.dat"
-        //#include "coeficientesPB.dat"
-        //#include "coeficientesPF.dat"
   };
 
   /* abre os arquivos de entrada e saida */
@@ -35,7 +33,7 @@ int main() {
   }
 
   // zera vetor de amostras
-  for (i = 0; i < NSAMPLES; i++) {
+  for (i = 0; i < QTSAMPLES; i++) {
     sample[i] = 0;
   }
 
@@ -50,12 +48,12 @@ int main() {
     sample[0] = entrada;
 
     //Convolução e acumulação
-    for (n = 0; n < NSAMPLES; n++) {
+    for (n = 0; n < QTSAMPLES; n++) {
       y += coef[n] * sample[n];
     }
 
     //desloca amostra
-    for (n = NSAMPLES - 1; n > 0; n--) {
+    for (n = QTSAMPLES - 1; n > 0; n--) {
       sample[n] = sample[n - 1];
     }
 

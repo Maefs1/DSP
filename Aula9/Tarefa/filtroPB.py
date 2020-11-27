@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+    # -*- coding: utf-8 -*-
 """
 Created on Tue Nov 7 00:20:52 2020
 
@@ -18,7 +18,7 @@ def kernelLowPass(M, h, Fc, K = 1):
     return h
         
 Fs = 8000
-Fc = 400
+Fc = 600
 Bw = 200
 
 # Normalizando
@@ -66,7 +66,7 @@ plt.title("Saída")
 plt.xlabel("Tempo")
 plt.ylabel("Amplitude")
 plt.grid(1)
-plt.plot(t, data_o[: len(t)])
+plt.plot(t, data_o[: len(t)], color='purple')
 
 [w, h] = freqz(h, worN=Fs, fs=1)
 
@@ -75,14 +75,14 @@ plt.title("Resposta em frequência")
 plt.xlabel("Número de amostras")
 plt.ylabel("Amplitude")
 plt.grid(1)
-plt.plot(w, abs(h))
+plt.plot(w, abs(h), color='black')
 
 plt.subplot(414)
 plt.title("Resposta em frequência (dB)")
 plt.xlabel("Frequência")
 plt.ylabel("Amplitude")
 plt.grid(1)
-plt.plot(w, 20*np.log10(abs(h)))
+plt.plot(w, 20*np.log10(abs(h)), color='black')
 
 plt.tight_layout()
 

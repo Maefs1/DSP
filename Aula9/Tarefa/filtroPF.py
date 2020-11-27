@@ -18,8 +18,8 @@ def kernelLowPass(M, h, Fc, K = 1):
     return h
         
 Fs  = 8000
-Fc1 = 400
-Fc2 = 800
+Fc1 = 600
+Fc2 = 2010
 Bw = 200
 
 # Normalizando
@@ -55,7 +55,7 @@ for i in range(M):
 hPA = -hPA
 hPA[int(M/2)] += 1
 
-hPF = np.convolve(hPA, hPB)
+hPF = np.convolve(hPA, hPB, 'same')
 
 with open('coeficientesPF.dat', 'w') as f:
     for x in hPF:
@@ -86,7 +86,7 @@ plt.title("Saída")
 plt.xlabel("Tempo")
 plt.ylabel("Amplitude")
 plt.grid(1)
-plt.plot(t, data_o[: len(t)])
+plt.plot(t, data_o[: len(t)], color='purple')
 
 [w, h] = freqz(hPF, worN=Fs, fs=1)
 
@@ -95,14 +95,14 @@ plt.title("Resposta em frequência")
 plt.xlabel("Número de amostras")
 plt.ylabel("Amplitude")
 plt.grid(1)
-plt.plot(w, abs(h))
+plt.plot(w, abs(h), color='black')
 
 plt.subplot(414)
 plt.title("Resposta em frequência (dB)")
 plt.xlabel("Frequência")
 plt.ylabel("Amplitude")
 plt.grid(1)
-plt.plot(w, 20*np.log10(abs(h)))
+plt.plot(w, 20*np.log10(abs(h)), color='black')
 
 plt.tight_layout()
 

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1606502177 source:c:\users\mathe\dsp\aula11\tarefa\filtroadaptativo\main.c
+	<stdio.h>
+	<fcntl.h>
+	<io.h>
+	"coeficientesPB.dat"
+
+1606356635 c:\users\mathe\dsp\aula11\tarefa\filtroadaptativo\coeficientespb.dat
+
